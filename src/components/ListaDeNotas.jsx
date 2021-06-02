@@ -4,9 +4,9 @@ import CardNota from './CardNota';
 class ListaDeNotas extends Component {
     render() {
         return(
-        <ul>{Array.of("Trabalho", "Trabalho", "Ensino").map(categoria => {
+        <ul>{Array.of("Trabalho", "Trabalho", "Ensino").map((categoria,index) => {
            return (
-               <li>
+               <li key={index}>
                    <p>{categoria}</p>
                    <CardNota/>
                </li>
