@@ -1,0 +1,9 @@
+.lista-notas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.lista-notas__items{
+    padding: 5rem 2rem;
+}
