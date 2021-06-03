@@ -3,12 +3,12 @@ import "./estilo.css"
 
 class FormularioCadastro extends Component {
 
-    constructor(){
+    constructor() {
         super();
-        this.titulo="";
+        this.titulo = "";
     }
 
-    handleMudançaTitulo(evento){
+    handleMudançaTitulo(evento) {
         this.titulo = evento.target.value;
     }
 
@@ -21,8 +21,15 @@ class FormularioCadastro extends Component {
                     className="form-cadastro__input"
                     onChange={this.handleMudançaTitulo.bind(this)}
                 />
-                <textarea rows={15} cols={50} placeholder="Escreva sua nota..." className="form-cadastro__input" />
-                <button className="form-cadastro__input form-cadastro__submit"> Criar Nota </button>
+                <textarea
+                    rows={15}
+                    cols={50}
+                    placeholder="Escreva sua nota..."
+                    className="form-cadastro__input"
+                />
+                <button className="form-cadastro__input form-cadastro__submit">
+                    Criar Nota
+                </button>
             </form>
         );
     }
