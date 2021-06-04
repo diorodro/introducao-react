@@ -3,41 +3,47 @@ import "./estilo.css"
 
 class FormularioCadastro extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.titulo = "";
         this.texto = "";
     }
 
-    handleMudançaTitulo(evento) {
+    _handleMudançaTitulo(evento) {
         this.titulo = evento.target.value;
+        evento.stopPropagation();
+
     }
 
-    handleMudancaTexto(evento){
-        this.titulo = evento.target.value;
+    _handleMudancaTexto(evento){
+        this.texto = evento.target.value;
+        evento.stopPropagation();
+
     }
 
-    criarNota(evento){
-        alert(`uma nova nota foi criada {this.titulo} {this.texto}`)
+    _criarNota(evento){
+        evento.preventDefault();
+        evento.stopPropagation();
+        this.props.criarNota(this.titulo, this.texto);
     }
 
     render() {
         return (
             <form className="form-cadastro"
-                onSubmit={this.criarNota.bind(this)}
+                onSubmit={this._criarNota.bind(this)}
             >
                 <input
                     type="text"
                     placeholder="Título"
                     className="form-cadastro__input"
-                    onChange={this.handleMudançaTitulo.bind(this)}
+                    onChange={this._handleMudançaTitulo.bind(this)}
                 />
                 <textarea
                     rows={15}
                     cols={50}
                     placeholder="Escreva sua nota..."
                     className="form-cadastro__input"
-                    onChange={this.handleMudancaTexto.bind(this)}
+                    onChange={this._handleMudancaTexto.bind(this)}
                 />
                 <button className="form-cadastro__input form-cadastro__submit">
                     Criar Nota

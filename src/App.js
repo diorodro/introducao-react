@@ -6,10 +6,15 @@ import './assets/index.css';
 
 
 class App extends Component {
+
+    criarNota(titulo, texto){
+        alert("uma nota foi criada: " + titulo + " " + texto)
+    }
+
    render(){
     return (
         <div className="conteudo">
-            <FormularioCadastro/>
+            <FormularioCadastro criarNota={this.criarNota}/>
             <ListaDeNotas/>
         </div>
     );
