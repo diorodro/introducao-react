@@ -1,6 +1,6 @@
 .lista-categorias{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 1rem;
 }
 
@@ -14,8 +14,14 @@
     color: whitesmoke;
     padding: .5rem;
     margin-left: .6rem;
+    transition: .5s ease-in-out .1s;
+}
+
+.lista-categorias__item:hover{
+    transform: scale(110%);
 }
 .lista-categorias__input{
     padding: .5rem 1rem;
-    margin-left: 10rem;
+    position: absolute;
+    right: 5%;
 }
