@@ -8,6 +8,10 @@ export default class ArrayDeNotas {
         this._inscritos.push(func);
     }
 
+    desincresver(func){
+        this._inscritos = this._inscritos.filter(f => f !== func)
+    }
+
     notificar() {
         this._inscritos.forEach(func => func(this.notas))
     }
@@ -15,10 +19,12 @@ export default class ArrayDeNotas {
     adicionarNota(titulo, texto, categoria) {
         const novaNota = new Nota(titulo, texto, categoria);
         this.notas.push(novaNota);
+        this.notificar();
     }
-
+    
     apagarNota(indice) {
         this.notas.splice(indice, 1);
+        this.notificar();
     }
 
 };
